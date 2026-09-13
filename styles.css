@@ -244,7 +244,18 @@ ul{list-style:none;}
 }
 
 /* ---------- about ---------- */
-.about{padding:6rem 0 7rem; border-top:1px solid var(--line);}
+.about{position:relative; padding:6rem 0 7rem; border-top:1px solid var(--line); overflow:hidden;}
+.about-bg{
+  position:absolute; inset:0;
+  background:url('img/about-bg.jpg') right center / 340px auto no-repeat;
+  filter:grayscale(1) contrast(1.05);
+  opacity:0.35;
+}
+.about-bg::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(90deg, var(--ink) 0%, var(--ink) 40%, rgba(11,11,16,0.4) 70%, rgba(11,11,16,0.15) 100%);
+}
+.about .section-head, .about-body{position:relative; z-index:1;}
 .about-body{padding:0 var(--gap); max-width:44rem;}
 .about-body p{font-size:1.05rem; line-height:1.6; color:rgba(239,235,226,0.8); margin-bottom:1.25rem;}
 .about-contact{margin-top:1.5rem; opacity:0.8;}
