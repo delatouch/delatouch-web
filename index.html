@@ -20,10 +20,20 @@
     <span class="mark-text">DELATOUCH</span>
   </a>
   <nav class="topnav">
-    <a href="#servicios" data-i18n-en="Services" data-i18n-es="Servicios">Services</a>
     <a href="#trabajo" data-i18n-en="Work" data-i18n-es="Trabajo">Work</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" id="index-btn" type="button" aria-expanded="false" data-i18n-en="Index" data-i18n-es="Índice">Index</button>
+      <div class="nav-dropdown-menu" id="index-menu">
+        <a href="#servicios" data-i18n-en="Categories" data-i18n-es="Categorías">Categories</a>
+        <a href="#proceso" data-i18n-en="Process" data-i18n-es="Proceso">Process</a>
+        <a href="#personalizacion" data-i18n-en="Customization" data-i18n-es="Personalización">Customization</a>
+        <a href="#sketches" data-i18n-en="Sketches" data-i18n-es="Bocetos">Sketches</a>
+      </div>
+    </div>
     <a href="#dth">DTH</a>
-    <a href="#contacto" data-i18n-en="Contact" data-i18n-es="Contacto">Contact</a>
+    <a href="#tienda" data-i18n-en="Shop" data-i18n-es="Tienda">Shop</a>
+    <a href="#about" data-i18n-en="Info" data-i18n-es="Info">Info</a>
+    <a href="#contacto" data-i18n-en="Email" data-i18n-es="Email">Email</a>
     <button class="lang-btn" id="lang-btn" type="button" aria-label="Switch language">ES</button>
   </nav>
   <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">
@@ -32,10 +42,15 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav">
-  <a href="#servicios" data-i18n-en="Services" data-i18n-es="Servicios">Services</a>
   <a href="#trabajo" data-i18n-en="Work" data-i18n-es="Trabajo">Work</a>
+  <a href="#servicios" data-i18n-en="Categories" data-i18n-es="Categorías">Categories</a>
+  <a href="#proceso" data-i18n-en="Process" data-i18n-es="Proceso">Process</a>
+  <a href="#personalizacion" data-i18n-en="Customization" data-i18n-es="Personalización">Customization</a>
+  <a href="#sketches" data-i18n-en="Sketches" data-i18n-es="Bocetos">Sketches</a>
   <a href="#dth">DTH</a>
-  <a href="#contacto" data-i18n-en="Contact" data-i18n-es="Contacto">Contact</a>
+  <a href="#tienda" data-i18n-en="Shop" data-i18n-es="Tienda">Shop</a>
+  <a href="#about" data-i18n-en="Info" data-i18n-es="Info">Info</a>
+  <a href="#contacto" data-i18n-en="Email" data-i18n-es="Email">Email</a>
   <button class="lang-btn lang-btn--mobile" id="lang-btn-mobile" type="button" aria-label="Switch language">ES</button>
 </div>
 
@@ -54,10 +69,9 @@
         Branding / Character Design / Apparel / Packaging / Typography
       </p>
       <p class="hero-bio"
-         data-i18n-en="30 years in art direction — from advertising agencies to running a studio in Beijing. Now building <strong>DTH</strong>."
-         data-i18n-es="30 años en dirección de arte — de agencias de publicidad a dirigir un estudio en Pekín. Ahora construyendo <strong>DTH</strong>.">
-        30 years in art direction — from advertising agencies to running a
-        studio in Beijing. Now building <strong>DTH</strong>.
+         data-i18n-en="More than 30 years in creative design and art direction — from advertising agencies to multidisciplinary art &amp; design expression."
+         data-i18n-es="Más de 30 años en diseño creativo y dirección de arte — de agencias de publicidad a expresión multidisciplinar de arte y diseño.">
+        More than 30 years in creative design and art direction — from advertising agencies to multidisciplinary art &amp; design expression.
       </p>
     </div>
     <div class="hero-lens" id="hero-lens" aria-hidden="true">
@@ -69,12 +83,20 @@
     </div>
   </section>
 
-  <!-- BRANDS -->
-  <section class="brands" data-reveal>
+  <!-- BRANDS — hidden until real work samples for these are shown; ready to un-hide later -->
+  <section class="brands" data-reveal hidden>
     <p class="brands-label mono" data-i18n-en="Worked with" data-i18n-es="He trabajado con">Worked with</p>
     <ul class="brands-list">
       <li>Vans</li>
       <li>DTH</li>
+      <li>Eroski</li>
+      <li>Vodafone</li>
+      <li>Euskaltel</li>
+      <li>Mercedes-Benz</li>
+      <li>Guggenheim Museum</li>
+      <li>Palacio Euskalduna</li>
+      <li>Bolsa de Bilbao</li>
+      <li>Athletic Club de Bilbao</li>
     </ul>
   </section>
 
@@ -92,6 +114,7 @@
       <li>Apparel</li>
       <li>Packaging</li>
       <li data-i18n-en="Typography" data-i18n-es="Tipografía">Typography</li>
+      <li data-i18n-en="Customization" data-i18n-es="Personalización">Customization</li>
     </ul>
   </section>
 
@@ -112,7 +135,7 @@
         <img src="img/work-dthgraf.jpg" alt="DTHGRAF" class="work-box-img">
         <div class="work-box-inner">
           <span class="mono">DTH</span>
-          <h3 data-i18n-en="Illustration &amp; graffiti" data-i18n-es="Ilustración &amp; grafiti">Illustration &amp; graffiti</h3>
+          <h3 data-i18n-en="Illustration &amp; muralism" data-i18n-es="Ilustración &amp; muralismo">Illustration &amp; muralism</h3>
         </div>
       </article>
       <article class="work-box work-box--image" data-reveal>
@@ -125,6 +148,128 @@
     </div>
   </section>
 
+  <!-- PROCESS -->
+  <section class="process" id="proceso">
+    <div class="section-head" data-reveal>
+      <span class="mono index">03</span>
+      <h2 data-i18n-en="Process" data-i18n-es="Proceso">Process</h2>
+    </div>
+    <p class="process-sub" data-reveal
+       data-i18n-en="From first sketch to final piece."
+       data-i18n-es="Del primer boceto a la pieza final.">
+      From first sketch to final piece.
+    </p>
+    <div class="process-grid">
+      <article class="process-step" data-reveal>
+        <span class="mono">01</span>
+        <h3 data-i18n-en="Sketch" data-i18n-es="Boceto">Sketch</h3>
+        <div class="process-box"><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+      </article>
+      <article class="process-step" data-reveal>
+        <span class="mono">02</span>
+        <h3 data-i18n-en="Development" data-i18n-es="Desarrollo">Development</h3>
+        <div class="process-box"><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+      </article>
+      <article class="process-step" data-reveal>
+        <span class="mono">03</span>
+        <h3 data-i18n-en="Final" data-i18n-es="Final">Final</h3>
+        <div class="process-box"><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CUSTOMIZATION -->
+  <section class="customization" id="personalizacion">
+    <div class="section-head" data-reveal>
+      <span class="mono index">04</span>
+      <h2 data-i18n-en="Customization" data-i18n-es="Personalización">Customization</h2>
+    </div>
+    <p class="process-sub" data-reveal
+       data-i18n-en="Customized apparel and accessories."
+       data-i18n-es="Personalización de moda y accesorios.">
+      Customized apparel and accessories.
+    </p>
+    <div class="work-grid">
+      <article class="work-box" data-reveal>
+        <div class="work-box-inner">
+          <span class="mono">—</span>
+          <h3 data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</h3>
+        </div>
+      </article>
+      <article class="work-box" data-reveal>
+        <div class="work-box-inner">
+          <span class="mono">—</span>
+          <h3 data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</h3>
+        </div>
+      </article>
+      <article class="work-box" data-reveal>
+        <div class="work-box-inner">
+          <span class="mono">—</span>
+          <h3 data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</h3>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop" id="tienda">
+    <div class="section-head" data-reveal>
+      <span class="mono index">05</span>
+      <h2 data-i18n-en="Shop" data-i18n-es="Tienda">Shop</h2>
+    </div>
+    <div class="shop-body" data-reveal>
+      <p
+        data-i18n-en="Digital prints, printed and shipped on demand via Etsy."
+        data-i18n-es="Prints digitales, impresos y enviados bajo demanda a través de Etsy.">
+        Digital prints, printed and shipped on demand via Etsy.
+      </p>
+      <a class="shop-link" href="https://www.etsy.com/shop/BigPlanB" target="_blank" rel="noopener">
+        <span data-i18n-en="Visit the shop" data-i18n-es="Ir a la tienda">Visit the shop</span> →
+      </a>
+    </div>
+  </section>
+
+  <!-- SKETCHES -->
+  <section class="sketches" id="sketches">
+    <div class="section-head" data-reveal>
+      <span class="mono index">06</span>
+      <h2 data-i18n-en="Sketches" data-i18n-es="Bocetos">Sketches</h2>
+    </div>
+    <p class="process-sub mono" data-reveal
+       data-i18n-en="Ongoing / Personal"
+       data-i18n-es="En curso / Personal">
+      Ongoing / Personal
+    </p>
+    <div class="sketches-grid">
+      <div class="sketches-box" data-reveal><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+      <div class="sketches-box" data-reveal><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+      <div class="sketches-box" data-reveal><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+      <div class="sketches-box" data-reveal><span class="mono placeholder-text" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-head" data-reveal>
+      <span class="mono index">07</span>
+      <h2 data-i18n-en="About" data-i18n-es="Sobre mí">About</h2>
+    </div>
+    <div class="about-body" data-reveal>
+      <p
+        data-i18n-en="Álvaro Quintana González — Delatouch. Laus Award winner at 21. 30 years across advertising agencies, his own studio, lead creative for a major antivirus brand, a stretch in Beijing, a clothing line, and VJ sets for electronic music. Now building DTH."
+        data-i18n-es="Álvaro Quintana González — Delatouch. Premio Laus con 21 años. 30 años entre agencias de publicidad, su propio estudio, director creativo de una gran marca de antivirus, una etapa en Pekín, una marca de ropa, y sesiones de VJ para música electrónica. Ahora construyendo DTH.">
+        Álvaro Quintana González — Delatouch. Laus Award winner at 21. 30 years
+        across advertising agencies, his own studio, lead creative for a major
+        antivirus brand, a stretch in Beijing, a clothing line, and VJ sets for
+        electronic music. Now building DTH.
+      </p>
+      <p class="about-contact mono">
+        <span data-i18n-en="Say hello:" data-i18n-es="Escríbeme:">Say hello:</span>
+        <a href="mailto:hello@delatouch.com">hello@delatouch.com</a>
+      </p>
+    </div>
+  </section>
+
   <!-- DTH -->
   <section class="dth" id="dth">
     <div class="dth-bg" aria-hidden="true"></div>
@@ -133,7 +278,7 @@
         <img src="img/dth-portrait.jpg" alt="DTH" class="dth-portrait">
       </div>
       <div class="dth-copy" data-reveal>
-        <span class="mono index">03</span>
+        <span class="mono index">08</span>
         <h2>DTH — dark future</h2>
         <p
           data-i18n-en="A personal content project: a robotic character reporting on where things are heading. No human face, no ego — just the character and the aesthetic."
@@ -142,20 +287,20 @@
           things are heading. No human face, no ego — just the character
           and the aesthetic.
         </p>
-        <a class="text-link" href="https://www.youtube.com/@DTH-DarkFuture" target="_blank" rel="noopener" id="dth-link" data-i18n-en="Watch the channel →" data-i18n-es="Ver el canal →">Watch the channel →</a>
+        <span class="text-link text-link--soon" id="dth-link" data-i18n-en="Coming soon" data-i18n-es="Próximamente">Coming soon</span>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT / EMAIL -->
   <section class="contact" id="contacto">
-    <div class="contact-grid">
-      <div class="contact-copy" data-reveal>
-        <span class="mono index">04</span>
-        <h2 data-i18n-en="Let's talk" data-i18n-es="Hablemos">Let's talk</h2>
-        <p data-i18n-en="Projects, collaborations, or just to say hi." data-i18n-es="Proyectos, colaboraciones o simplemente decir hola.">Projects, collaborations, or just to say hi.</p>
-        <a class="contact-email" href="mailto:delatouch@gmail.com">delatouch@gmail.com</a>
-      </div>
+    <div class="contact-bg" aria-hidden="true"></div>
+    <div class="contact-inner">
+      <span class="mono index">09</span>
+      <h2 data-i18n-en="Send me anything" data-i18n-es="Escríbeme lo que sea">Send me anything</h2>
+      <p data-i18n-en="A project, a question, or just to say hi — straight to my inbox, no newsletter." data-i18n-es="Un proyecto, una pregunta, o simplemente saludar — directo a mi correo, sin newsletter.">
+        A project, a question, or just to say hi — straight to my inbox, no newsletter.
+      </p>
       <form class="contact-form" data-reveal action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <label>
           <span data-i18n-en="Name" data-i18n-es="Nombre">Name</span>
@@ -171,6 +316,7 @@
         </label>
         <button type="submit" data-i18n-en="Send" data-i18n-es="Enviar">Send</button>
       </form>
+      <a class="contact-email" href="mailto:hello@delatouch.com">hello@delatouch.com</a>
     </div>
   </section>
 

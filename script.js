@@ -105,3 +105,26 @@ if (menuBtn && mobileNav) {
     });
   });
 }
+
+// --- Index dropdown toggle ---
+const indexBtn = document.getElementById('index-btn');
+const indexMenu = document.getElementById('index-menu');
+if (indexBtn && indexMenu) {
+  indexBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = indexMenu.classList.toggle('is-open');
+    indexBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+  indexMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      indexMenu.classList.remove('is-open');
+      indexBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!indexMenu.contains(e.target) && e.target !== indexBtn) {
+      indexMenu.classList.remove('is-open');
+      indexBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
