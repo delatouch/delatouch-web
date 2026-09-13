@@ -1,3 +1,40 @@
+// --- Language toggle (ES / EN) ---
+(function () {
+  const STORAGE_KEY = 'delatouch-lang';
+  const nodes = document.querySelectorAll('[data-i18n-es]');
+  const langBtn = document.getElementById('lang-btn');
+  const langBtnMobile = document.getElementById('lang-btn-mobile');
+  const metaDesc = document.getElementById('meta-desc');
+  const descriptions = {
+    es: 'Delatouch. 30 años de dirección de arte, branding e ilustración. Álvaro Quintana González.',
+    en: 'Delatouch. 30 years of art direction, branding and illustration. Álvaro Quintana González.'
+  };
+
+  function applyLang(lang) {
+    nodes.forEach((el) => {
+      const value = lang === 'en' ? el.getAttribute('data-i18n-en') : el.getAttribute('data-i18n-es');
+      if (value != null) el.innerHTML = value;
+    });
+    document.documentElement.lang = lang;
+    if (metaDesc) metaDesc.setAttribute('content', descriptions[lang]);
+    const nextLabel = lang === 'en' ? 'ES' : 'EN';
+    if (langBtn) langBtn.textContent = nextLabel;
+    if (langBtnMobile) langBtnMobile.textContent = nextLabel;
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  let current = 'es';
+  try { current = localStorage.getItem(STORAGE_KEY) || 'es'; } catch (e) {}
+  applyLang(current);
+
+  function toggle() {
+    current = current === 'en' ? 'es' : 'en';
+    applyLang(current);
+  }
+  if (langBtn) langBtn.addEventListener('click', toggle);
+  if (langBtnMobile) langBtnMobile.addEventListener('click', toggle);
+})();
+
 // Respect users who've asked for reduced motion
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -37,10 +74,10 @@ if (!prefersReducedMotion) {
     });
   });
 
-  // --- DTH avatar: gentle idle tilt, echoes a camera/robot "looking around" ---
-  gsap.to('.dth-avatar', {
-    rotate: 3,
-    duration: 2.4,
+  // --- DTH portrait: gentle idle drift ---
+  gsap.to('.dth-portrait', {
+    y: -8,
+    duration: 2.6,
     yoyo: true,
     repeat: -1,
     ease: 'sine.inOut'
