@@ -6,29 +6,29 @@
   const langBtnMobile = document.getElementById('lang-btn-mobile');
   const metaDesc = document.getElementById('meta-desc');
   const descriptions = {
-    es: 'Delatouch. 30 años de dirección de arte, branding e ilustración. Álvaro Quintana González.',
-    en: 'Delatouch. 30 years of art direction, branding and illustration. Álvaro Quintana González.'
+    en: 'Delatouch. Illustration, graphic design, branding, character design. Álvaro Quintana González.',
+    es: 'Delatouch. Ilustración, diseño gráfico, branding, diseño de personajes. Álvaro Quintana González.'
   };
 
   function applyLang(lang) {
     nodes.forEach((el) => {
-      const value = lang === 'en' ? el.getAttribute('data-i18n-en') : el.getAttribute('data-i18n-es');
+      const value = lang === 'es' ? el.getAttribute('data-i18n-es') : el.getAttribute('data-i18n-en');
       if (value != null) el.innerHTML = value;
     });
     document.documentElement.lang = lang;
     if (metaDesc) metaDesc.setAttribute('content', descriptions[lang]);
-    const nextLabel = lang === 'en' ? 'ES' : 'EN';
+    const nextLabel = lang === 'es' ? 'EN' : 'ES';
     if (langBtn) langBtn.textContent = nextLabel;
     if (langBtnMobile) langBtnMobile.textContent = nextLabel;
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
   }
 
-  let current = 'es';
-  try { current = localStorage.getItem(STORAGE_KEY) || 'es'; } catch (e) {}
+  let current = 'en';
+  try { current = localStorage.getItem(STORAGE_KEY) || 'en'; } catch (e) {}
   applyLang(current);
 
   function toggle() {
-    current = current === 'en' ? 'es' : 'en';
+    current = current === 'es' ? 'en' : 'es';
     applyLang(current);
   }
   if (langBtn) langBtn.addEventListener('click', toggle);
