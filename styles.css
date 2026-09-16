@@ -22,6 +22,7 @@
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
+img,svg{display:block; max-width:100%;}
 html{background:var(--ink);}
 html.lenis{height:auto;}
 .lenis.lenis-smooth{scroll-behavior:auto;}
@@ -52,6 +53,13 @@ ul{list-style:none;}
   display:flex; justify-content:space-between; align-items:center;
   padding:1.25rem var(--gap);
   mix-blend-mode:difference;
+  transition:background-color 0.25s ease;
+}
+/* el blend del header arrastraba también al desplegable: al abrirlo se desactiva */
+.topbar.is-solid{
+  mix-blend-mode:normal;
+  background:rgba(11,11,16,0.96);
+  backdrop-filter:blur(8px);
 }
 .mark{display:flex; align-items:center; gap:0.5rem;}
 .mark-lens{width:22px; height:22px; object-fit:contain;}
@@ -59,6 +67,11 @@ ul{list-style:none;}
 .topnav{display:flex; align-items:center; gap:clamp(1rem,3vw,2rem); font-size:0.9rem;}
 .topnav a{opacity:0.8; transition:opacity 0.2s ease;}
 .topnav a:hover{opacity:1;}
+.topnav a.is-active{opacity:1;}
+.topnav a.is-active::after{
+  content:''; display:block; height:1px; margin-top:3px;
+  background:currentColor; opacity:0.9;
+}
 .nav-dropdown{position:relative;}
 .nav-dropdown-btn{
   font-family:inherit; font-size:inherit; color:inherit;
@@ -142,6 +155,7 @@ ul{list-style:none;}
 .scroll-line{width:1px; height:2.5rem; background:var(--paper); opacity:0.5;}
 
 /* ---------- brands strip ---------- */
+.brands[hidden]{display:none;}   /* el atributo hidden debe ganar al display:flex de abajo */
 .brands{
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
@@ -180,7 +194,7 @@ ul{list-style:none;}
 .work{padding:6rem 0 7rem; background:var(--paper); color:var(--ink);}
 .work .mono{opacity:0.55;}
 .work-grid{
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:1px;
   background:var(--line-on-paper);
   margin:0 var(--gap);
 }
@@ -191,6 +205,7 @@ ul{list-style:none;}
   padding:1.5rem;
   position:relative;
 }
+.work-box--wide{grid-column:1 / -1; aspect-ratio:16/5;}
 .work-box--filled{background:var(--ink); color:var(--paper);}
 .work-box--filled .mono{opacity:0.6; color:var(--paper);}
 .work-box-inner h3{font-family:var(--font-display); font-size:1.2rem; margin-top:0.4rem;}
@@ -228,6 +243,7 @@ ul{list-style:none;}
 /* ---------- customization ---------- */
 .customization{padding:6rem 0 7rem; background:var(--paper); color:var(--ink); border-top:1px solid var(--line-on-paper);}
 .customization .process-sub{opacity:0.6;}
+.customization .work-grid{grid-template-columns:repeat(3, 1fr);}
 .customization .work-box{opacity:0.5;}
 
 /* ---------- sketches ---------- */
@@ -295,7 +311,7 @@ ul{list-style:none;}
 
 .dth-visual{display:flex; justify-content:center;}
 .dth-portrait{
-  width:100%; max-width:20rem;
+  width:100%; max-width:20rem; height:auto;
   border-radius:4px;
   box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
@@ -334,6 +350,14 @@ ul{list-style:none;}
 .contact-form input:focus, .contact-form textarea:focus{
   outline:none; border-bottom-color:var(--lime);
 }
+.gotcha{position:absolute; left:-9999px; width:1px; height:1px; opacity:0;}
+.form-status{
+  margin-top:0.25rem; text-align:center; min-height:1.2em;
+  color:var(--lime); opacity:0;  transition:opacity 0.25s ease;
+}
+.form-status.is-visible{opacity:0.9;}
+.form-status.is-error{color:var(--red);}
+.contact-form button[disabled]{opacity:0.5; cursor:default;}
 .contact-form button{
   align-self:center; margin-top:0.5rem;
   background:var(--lime); color:var(--ink);
@@ -350,6 +374,22 @@ ul{list-style:none;}
   border-top:1px solid var(--line);
   opacity:0.55;
 }
+
+/* ---------- accesibilidad ---------- */
+.skip-link{
+  position:absolute; left:var(--gap); top:-100px; z-index:70;
+  background:var(--lime); color:var(--ink);
+  padding:0.6rem 1rem; border-radius:999px; font-size:0.85rem;
+  transition:top 0.2s ease;
+}
+.skip-link:focus{top:1rem;}
+:focus-visible{outline:2px solid var(--lime); outline-offset:3px;}
+
+/* el header es fijo: las anclas se paran un poco antes para no quedar tapadas */
+section[id]{scroll-margin-top:5.5rem;}
+
+/* con el menú móvil abierto se bloquea el scroll del fondo */
+body.nav-open{overflow:hidden;}
 
 /* ---------- reveal state (set up for JS) ---------- */
 [data-reveal]{opacity:0; transform:translateY(24px);}
@@ -377,6 +417,8 @@ ul{list-style:none;}
 /* ---------- responsive (comes after base rules, so it wins the cascade) ---------- */
 @media (max-width: 860px){
   .work-grid{grid-template-columns:1fr;}
+  .work-box--wide{aspect-ratio:16/7;}
+  .customization .work-grid{grid-template-columns:1fr;}
   .process-grid{grid-template-columns:1fr;}
   .sketches-grid{grid-template-columns:repeat(2,1fr);}
   .dth-grid{grid-template-columns:1fr;}

@@ -5,18 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n-en="Delatouch — Illustration &amp; Graphic Design" data-i18n-es="Delatouch — Ilustración &amp; Diseño gráfico">Delatouch — Illustration &amp; Graphic Design</title>
 <meta name="description" id="meta-desc" content="Delatouch. Illustration, graphic design, branding, character design. Álvaro Quintana González.">
+<link rel="canonical" href="https://delatouch.com/">
 <link rel="icon" href="img/favicon.png" type="image/png">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0B10">
+
+<!-- social preview (WhatsApp, LinkedIn, X, Instagram DM, Slack) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://delatouch.com/">
+<meta property="og:site_name" content="Delatouch">
+<meta property="og:title" content="Delatouch — Illustration &amp; Graphic Design">
+<meta property="og:description" content="Branding / Character Design / Apparel / Packaging / Typography. More than 30 years in creative design and art direction.">
+<meta property="og:image" content="https://delatouch.com/img/dth-banner.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="576">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Delatouch — Illustration &amp; Graphic Design">
+<meta name="twitter:description" content="Branding / Character Design / Apparel / Packaging / Typography.">
+<meta name="twitter:image" content="https://delatouch.com/img/dth-banner.jpg">
 
 <link rel="stylesheet" href="js/lenis.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<a class="skip-link" href="#trabajo" data-i18n-en="Skip to content" data-i18n-es="Ir al contenido">Skip to content</a>
+
 <div class="grain"></div>
 
-<header class="topbar" data-reveal>
+<header class="topbar">
   <a href="#top" class="mark">
-    <img src="img/dth-logo.png" alt="DTH" class="mark-lens">
+    <img src="img/dth-logo.png" alt="DTH" class="mark-lens" width="455" height="477" decoding="async">
     <span class="mark-text">DELATOUCH</span>
   </a>
   <nav class="topnav">
@@ -75,7 +94,7 @@
       </p>
     </div>
     <div class="hero-lens" id="hero-lens" aria-hidden="true">
-      <img src="img/firma.png" alt="" class="hero-signature">
+      <img src="img/firma.png" alt="" class="hero-signature" width="1200" height="308" decoding="async">
     </div>
     <div class="scroll-cue" aria-hidden="true">
       <span class="mono">scroll</span>
@@ -131,17 +150,18 @@
         </div>
       </article>
       <article class="work-box work-box--image" data-reveal>
-        <img src="img/work-dthgraf.jpg" alt="DTHGRAF" class="work-box-img">
-        <div class="work-box-inner">
-          <span class="mono">DTH</span>
-          <h3 data-i18n-en="Illustration &amp; muralism" data-i18n-es="Ilustración &amp; muralismo">Illustration &amp; muralism</h3>
-        </div>
-      </article>
-      <article class="work-box work-box--image" data-reveal>
-        <img src="img/work-calavera.png" alt="Character design" class="work-box-img">
+        <img src="img/work-calavera.png" alt="Character design" class="work-box-img" width="582" height="900" loading="lazy" decoding="async">
         <div class="work-box-inner">
           <span class="mono">—</span>
           <h3 data-i18n-en="Character design" data-i18n-es="Diseño de personajes">Character design</h3>
+        </div>
+      </article>
+      <!-- pieza panorámica (1600x373): a ancho completo para no recortarla en una caja vertical -->
+      <article class="work-box work-box--image work-box--wide" data-reveal>
+        <img src="img/work-dthgraf.jpg" alt="DTHGRAF" class="work-box-img" width="1600" height="373" loading="lazy" decoding="async">
+        <div class="work-box-inner">
+          <span class="mono">DTH</span>
+          <h3 data-i18n-en="Illustration &amp; muralism" data-i18n-es="Ilustración &amp; muralismo">Illustration &amp; muralism</h3>
         </div>
       </article>
     </div>
@@ -288,7 +308,7 @@
       </p>
       <p class="about-contact mono">
         <span data-i18n-en="Say hello:" data-i18n-es="Escríbeme:">Say hello:</span>
-        <a href="mailto:hello@delatouch.com">hello@delatouch.com</a>
+        <a href="mailto:mail@delatouch.com">mail@delatouch.com</a>
       </p>
     </div>
   </section>
@@ -298,7 +318,7 @@
     <div class="dth-bg" aria-hidden="true"></div>
     <div class="dth-grid">
       <div class="dth-visual" data-reveal>
-        <img src="img/dth-portrait.jpg" alt="DTH" class="dth-portrait">
+        <img src="img/dth-portrait.jpg" alt="DTH" class="dth-portrait" width="603" height="900" loading="lazy" decoding="async">
       </div>
       <div class="dth-copy" data-reveal>
         <span class="mono index">08</span>
@@ -324,22 +344,26 @@
       <p data-i18n-en="A project, a question, or just to say hi — straight to my inbox, no newsletter." data-i18n-es="Un proyecto, una pregunta, o simplemente saludar — directo a mi correo, sin newsletter.">
         A project, a question, or just to say hi — straight to my inbox, no newsletter.
       </p>
-      <form class="contact-form" data-reveal action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="contact-form" id="contact-form" data-reveal method="POST">
         <label>
           <span data-i18n-en="Name" data-i18n-es="Nombre">Name</span>
-          <input type="text" name="name" required>
+          <input type="text" name="name" autocomplete="name" required>
         </label>
         <label>
           <span>Email</span>
-          <input type="email" name="email" required>
+          <input type="email" name="email" autocomplete="email" required>
         </label>
         <label>
           <span data-i18n-en="Message" data-i18n-es="Mensaje">Message</span>
           <textarea name="message" rows="4" required></textarea>
         </label>
-        <button type="submit" data-i18n-en="Send" data-i18n-es="Enviar">Send</button>
+        <!-- trampa antispam: invisible para personas, los bots la rellenan -->
+        <input type="hidden" name="_subject" value="New message from delatouch.com">
+        <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" id="contact-submit" data-i18n-en="Send" data-i18n-es="Enviar">Send</button>
+        <p class="form-status mono" id="form-status" role="status" aria-live="polite"></p>
       </form>
-      <a class="contact-email" href="mailto:hello@delatouch.com">hello@delatouch.com</a>
+      <a class="contact-email" href="mailto:mail@delatouch.com">mail@delatouch.com</a>
     </div>
   </section>
 
